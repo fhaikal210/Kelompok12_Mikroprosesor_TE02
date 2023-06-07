@@ -1,0 +1,16 @@
+Kelompok  : 12
+Kelas     : Teknik Elektro 02
+Anggota   : - Aif Umar Nawawi (2109016)
+            - Mohamad Fikri Haikal Anwar (2107957)
+            - Mohhamad Fahril Permadiana (2104452)
+            - Nanditama Hafidz (2105692)
+            
+Judul     : SMART IoT SYSTEM FOR MONITORING AND CONTROL GARDEN
+Sensor    : - LDR
+            - Soil Moisture
+            - DHT11
+            - PIR
+Aktuator  : Pompa air DC
+
+
+
