@@ -1,3 +1,9 @@
+//#####################################################
+//-------------------- KELOMPOK 12 --------------------
+//--------- SMART MONITORING GARDEN WITH IoT ----------
+//------------ ELECTRICAL ENGINEERING 02 --------------
+//#####################################################
+
 #include <SoftwareSerial.h>
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
