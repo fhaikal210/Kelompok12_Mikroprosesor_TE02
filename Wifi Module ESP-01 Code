@@ -4,29 +4,37 @@
 //------------ ELECTRICAL ENGINEERING 02 --------------
 //#####################################################
 
+//----- Library -----
 #include <SoftwareSerial.h>
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
 #include <UniversalTelegramBot.h>
 #include <ArduinoJson.h>
+//-------------------
 
+//----- Pengaturan WiFi -----
 const char* ssid = "Internet@wifi.id";
 const char* password = "asdfghjkl";
-SoftwareSerial s(0,2);
+//---------------------------
+
+SoftwareSerial s(0,2); //==> Komunikasi serial ke arduino
+
+//----- Pengaturan Telegram -----
 #define BOTtoken "6028107999:AAEiyN8rS8bWHF9ULba4l2WaKXbeIrXt4w4"  
 #define CHAT_ID "1354426222"
-X509List cert(TELEGRAM_CERTIFICATE_ROOT);
+//-------------------------------
 
+X509List cert(TELEGRAM_CERTIFICATE_ROOT);
 WiFiClientSecure client;
 UniversalTelegramBot bot(BOTtoken, client);
-
 int botRequestDelay = 1000;
 unsigned long lastTimeBotRan;
-
 const int ledPin = 1;
 bool ledState = LOW;
 String pesan;
+//----- Pengaturan Pesan Pembuka -----
 String intro = "Selamat Datang di Laman IoT Control & Monitoring Kelompok 12\n\nGunakan perintah di bawah ini untuk mengendalikan perangkat.\n/ledon ==> Menyalakan LED\n/ledoff ==> Mematikan LED\n/monitor ==> Mengetahui keadaan LED terkini";
+//------------------------------------
 
 void handleNewMessages(int numNewMessages) {
   for (int i=0; i<numNewMessages; i++) {
@@ -45,13 +53,10 @@ void setup() {
   s.begin(9600);
   configTime(0, 0, "pool.ntp.org");
   client.setTrustAnchors(&cert);
-
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, ledState);
-
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
-
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
   }
