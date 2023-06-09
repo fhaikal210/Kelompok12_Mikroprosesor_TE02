@@ -6,11 +6,8 @@ Anggota   : - Aif Umar Nawawi (2109016)
             - Nanditama Hafidz (2105692)
             
 Judul     : SMART IoT SYSTEM FOR MONITORING AND CONTROL GARDEN
-Sensor    : - LDR
+Sensor    : - LDR GL5516 Photoresistor
             - Soil Moisture
-            - DHT11
-            - PIR
+            - Thermistor NTC 10K
+            - HC-SR501 PIR Motion Sensor
 Aktuator  : Pompa air DC
-
-
-
