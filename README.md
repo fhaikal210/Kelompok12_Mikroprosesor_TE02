@@ -1,5 +1,5 @@
 <h2 class="bb_tag">Kelompok 12 Mikroprosesor TE-02</h2>
-            <br>- Aif Umar Nawawi (2109016)
+                - Aif Umar Nawawi (2109016)
             <br>- Mohamad Fikri Haikal Anwar (2107957)
             <br>- Mohhamad Fahril Permadiana (2104452)
             <br>- Nanditama Hafidz (2105692)<br>
