@@ -1,4 +1,4 @@
-# Kelompok12_Mikroprosesor_TE02
+# Arduino Project of Smart Monitoring and Control Garden with IoT System
 Anggota   : - Aif Umar Nawawi (2109016)
             - Mohamad Fikri Haikal Anwar (2107957)
             - Mohhamad Fahril Permadiana (2104452)
