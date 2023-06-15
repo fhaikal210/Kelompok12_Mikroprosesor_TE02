@@ -1,5 +1,5 @@
 # Arduino Project of Smart Monitoring and Control Garden with IoT System
-Anggota   : <br>- Aif Umar Nawawi (2109016)
+Anggota   : <br>        - Aif Umar Nawawi (2109016)
             - Mohamad Fikri Haikal Anwar (2107957)
             - Mohhamad Fahril Permadiana (2104452)
             - Nanditama Hafidz (2105692)
