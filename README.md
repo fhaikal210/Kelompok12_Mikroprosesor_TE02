@@ -8,4 +8,4 @@
             <br>- Soil Moisture
             <br>- Thermistor NTC 10K
             <br>- HC-SR501 PIR Motion Sensor<br>
-<h2 class="bb_tag">Aktuator</h2>Pompa air DC
+<h2 class="bb_tag">Aktuator</h2>- Pompa air DC
