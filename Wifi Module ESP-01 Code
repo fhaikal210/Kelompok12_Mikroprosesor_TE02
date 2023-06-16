@@ -33,7 +33,7 @@ const int ledPin = 1;
 bool ledState = LOW;
 String pesan;
 //----- Pengaturan Pesan Pembuka -----
-String intro = "Selamat Datang di Laman IoT Control & Monitoring Kelompok 12\n\nGunakan perintah di bawah ini untuk mengendalikan perangkat.\n/ledon ==> Menyalakan LED\n/ledoff ==> Mematikan LED\n/monitor ==> Mengetahui keadaan LED terkini";
+String intro = "========== Selamat Datang ==========\n------- IoT Control & Monitoring Garden -------\n=========== Kelompok 12 ===========\n\nGunakan perintah di bawah ini untuk mengendalikan perangkat.\n\n/monitor ==> Monitoring keadaan kebun terkini\n/siramon ==> Menyalakan pompa penyiraman\n/siramoff ==> Mematikan pompa penyiraman\n\nAtau gunakan menu command bot\n \xF0\x9F\x91\x87";
 //------------------------------------
 
 void handleNewMessages(int numNewMessages) {
@@ -76,7 +76,7 @@ void loop() {
       pesan.trim();
       if (pesan.startsWith("K :")){
         bot.sendMessage(CHAT_ID, pesan, "");
-        bot.sendMessage(CHAT_ID, "Keterangan :\nK ==> Kelembapan\nS ==> Suhu (°C)\nC ==> Intensitas Cahaya\nG ==> Deteksi Pergerakan\nP ==> Kondisi Pompa (1 = Menyala atau 0 = Mati)","");
+        bot.sendMessage(CHAT_ID, "Keterangan :\nK ==> Kelembapan (%)\nS ==> Suhu (°C)\nC ==> Intensitas Cahaya (Lux)\nG ==> Deteksi Pergerakan\nP ==> Kondisi Pompa (1 = Menyala atau 0 = Mati)","");
         pesan = "";
       }
       bot.sendMessage(CHAT_ID, pesan, "");
