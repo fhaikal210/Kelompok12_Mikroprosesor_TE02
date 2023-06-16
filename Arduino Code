@@ -12,8 +12,8 @@ bool siram = 0, pir = 0;
 int ldr, soil, suhu;
 
 //----- Set Batas Kelembapan -----
-int bawahSoil = 24; //Batas bawah kelembapan
-int atasSoil = 27; //Batas atas kelembapan
+int bawahSoil = 20; //Batas bawah kelembapan
+int atasSoil = 80; //Batas atas kelembapan
 //--------------------------------
 
 //----- Pin Setiap Komponen -----
@@ -50,7 +50,7 @@ void cekKondisi(){
     digitalWrite(buzz,1);
     pir = 1;
     Serial.println("Mendeteksi pergerakan...");
-  } else if (pir == 0){
+  } else {
     digitalWrite(buzz,0);
     pir = 0;
     Serial.println("Tidak ada pergerakan...");
@@ -59,7 +59,7 @@ void cekKondisi(){
 
 void cekSensor(){
   //----- Kode Sensor LDR (C) -----
-  ldr = analogRead(s_ldr); //C ==> Hasil baca LDR
+  ldr = 125235178.3654270 * pow(((5-((float)analogRead(s_ldr) / 1023 * 5.0)) / ((float)analogRead(s_ldr) / 1023 * 5.0) * 10000), -1.604568157); //C ==> Hasil baca LDR
   Serial.println(String(ldr));
   //-------------------------------
 
@@ -87,6 +87,11 @@ void setup() {
   Serial.begin(9600);
   s.begin(9600);
   pinMode(outPompa, OUTPUT);
+  pinMode(buzz, OUTPUT);
+  pinMode(s_ldr,INPUT);
+  pinMode(s_soil,INPUT);
+  pinMode(s_suhu,INPUT);
+  pinMode(s_pir,INPUT);
   Serial.println("Halo");
 }
 
@@ -100,12 +105,12 @@ void loop() {
       pesan.trim();
       Serial.println(pesan);
       Serial.println(pesan.length());
-      if (pesan.equals("/siramOn")){ //==> Pesan untuk menyiram
+      if (pesan.equals("/siramon")){ //==> Pesan untuk menyiram
         digitalWrite(outPompa,1);
         siram = true;
         Serial.println("Pompa dinyalakan...");
         s.print("\nPompa dinyalakan...");
-      } else if (pesan.equals("/siramOff")){ //==> Pesan untuk berhenti menyiram
+      } else if (pesan.equals("/siramoff")){ //==> Pesan untuk berhenti menyiram
         digitalWrite(outPompa,0);
         siram = false;
         Serial.println("Pompa dimatikan...");
@@ -120,6 +125,6 @@ void loop() {
       pesan = "";
     }
     cekKondisi();
-    delay(5000);
+    delay(1000);
   }
 
