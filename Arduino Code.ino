@@ -34,7 +34,7 @@ void cekKondisi(){
   Serial.println("Mengecek Kondisi...");
   cekSensor();
   if (soil < bawahSoil && siram){
-    Serial.println("Pompa dinyalakan...tapi udah");
+    Serial.println("Pompa dinyalakan...tapi sudah");
   } else if (soil < bawahSoil && !siram){
     digitalWrite(outPompa,1);
     siram = 1;
@@ -44,7 +44,7 @@ void cekKondisi(){
     siram = 0;
     Serial.println("Pompa dimatikan...");
   } else if (soil > atasSoil && !siram){
-    Serial.println("Pompa dimatikan...tapi udah");
+    Serial.println("Pompa dimatikan...tapi sudah");
   }
   if (pir == 1){
     digitalWrite(buzz,1);
@@ -120,7 +120,6 @@ void loop() {
         cekSensor();
         s.print("\nK : "+String(soil)+"\nS : "+String(suhu)+"\nC : "+String(ldr)+"\nG : "+String(pir)+"\nP : "+String(siram));
       } else {
-        s.print("\nPERINTAH TIDAK VALID !!!");
       }
       pesan = "";
     }
